@@ -1,12 +1,32 @@
 <html>
     <head>
         <title>Birthday card</title>
-        <script src="script.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaleable=no">
+        <script defer src="script.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Welcome to My Web Page</h1>
-        <p>This is a sample paragraph to demonstrate a basic HTML structure.</p>
-        <div class="price"></div>
+        <div class="card-wrapper default">
+            <div class="card">
+                <h1>Hahó, Cseni!</h1>
+                <div class="content">
+                    <p>Boldog születésnapot! 🎉</p>
+                    <p class="description"></p>
+                    <p class="addition"></p>
+                </div>
+                <button class="surprise-button" onclick="onNext()">Tovább az ajándékhoz</button>
+            </div>
+        </div>
+
+
+        <div class="card-wrapper surprise">
+            <div class="card surprise">
+                <div class="surprise-content">
+                    <h1>Ajándékutalvány</h1>
+                    <div class="price"><div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
