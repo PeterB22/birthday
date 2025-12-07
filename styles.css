@@ -1,8 +1,11 @@
 html,body {
     font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Geneva, Verdana, sans-serif;
+    color: #767676;
+}
+
+body {
     background: url('assets/images/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #767676;
     padding: 5%;
 }
 
@@ -36,15 +39,49 @@ html,body {
 }
 
 .card.surprise {
-    background: url('assets/images/gift-card.png') no-repeat;
-    background-size: cover;
+    background: url('assets/images/gift-card.png');
+    background-size: cover;         /* important for responsive scaling */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Card sizing */
     width: 100%;
+    max-width: 600px;
+    aspect-ratio: 3/4;              /* keeps shape consistent */
+
+    /* Center content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Optional */
+    border-radius: 20px;
 }
 .card .surprise-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+.card > div {
+    display: block;
+}
+.card .title {
+    margin-top: -10%;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.card .price {
+    font-size: 4em;
+    font-weight: bold;
+    color: #FF5733;
+    text-align: center;
+}
+.card .price-after {
+    font-size: 1.2em;
+    font-weight: normal;
+    font-style: italic;
+    color: #333333;
+    text-align: center;
+    margin-top: -5px;
 }
 .card p { 
     width: 100%;

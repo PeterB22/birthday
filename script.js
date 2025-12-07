@@ -35,6 +35,7 @@ const getTextRead = () => {
 
 const setup = () => {
     if (getTextRead() !== '1') {
+        localStorage.setItem('textRead', 0);
         description = `Ma hivatalosan is közelebb kerültél ahhoz, hogy a torta gyertyáit már ne csak elfújd, hanem kiszámold, mennyi oxigént égetsz el vele. 😄
                 Remélem, hogy az év minden napján annyi nevetésed lesz, hogy az izmaid is edzésben maradjanak – végre van értelme a konditeremnek!`;
         addition = `Ne feledd: az élet túl rövid ahhoz, hogy komoly legyél… szóval egyél sokat, nevess még többet, és ha lehet, ne vedd túl komolyan a korodat – a számok csak a statisztikának kellenek, a bulinak nem.
@@ -53,16 +54,7 @@ const setup = () => {
 setup();
 
 
-
-
-
-
-
-
-
-
-
 fetch('config.json').then(response => response.json()).then(config => {
     let priceElement = document.querySelector('.price');
-    priceElement.textContent = `${config.price} Ft értékben`;
+    priceElement.textContent = `${config.price} Ft`;
 }); 
