@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 * * * *"   # every hour
   workflow_dispatch:      # allow manual trigger
+  inputs:
+      price:
+        description: "Insert new price value"
+        required: true
+        default: "10000"
 
 jobs:
   update:
@@ -15,7 +20,8 @@ jobs:
 
       - name: Update config.json
         run: |
-          echo "{ \"price\": 14500 }" > config.json
+          PRICE="${{ github.event.inputs.price }}"
+          echo "{ \"price\": $PRICE }" > config.json
 
       - name: Commit and push changes
         run: |
