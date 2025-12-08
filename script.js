@@ -76,13 +76,10 @@ const setup = () => {
 }
 
 setup();
-
-
-fetch(`config.json?ts=${Date.now()}`, {
-    cache: 'no-cache',
-    headers: {
-        'Cache-Control': 'no-cache'
-    }
+// https://raw.githubusercontent.com/<USER>/<REPO>/<BRANCH>/<PATH_TO_FILE>
+const url = `https://raw.githubusercontent.com/peterb22/birthday/master/config.json?ts=${Date.now()}`;
+fetch(`${url}`, {
+    cache: 'no-store',
 }).then(response => response.json()).then(config => {
     let priceElement = document.querySelector('.price');
     priceElement.textContent = `${config.price} Ft`;
