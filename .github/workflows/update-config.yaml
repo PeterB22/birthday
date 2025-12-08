@@ -6,7 +6,7 @@ on:
         price:
           description: "Insert new price value"
           required: true
-          default: "10000"
+          default: 10000
 
 jobs:
   update:
@@ -18,7 +18,7 @@ jobs:
 
       - name: Update config.json
         run: |
-          PRICE="${{ github.event.inputs.price }}"
+          PRICE="${{ github.event.inputs.price || 10000 }}"
           echo "{ \"price\": $PRICE }" > config.json
 
       - name: Commit and push changes
