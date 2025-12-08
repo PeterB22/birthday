@@ -54,7 +54,12 @@ const setup = () => {
 setup();
 
 
-fetch(`config.json?ts=${Date.now()}`).then(response => response.json()).then(config => {
+fetch(`config.json?ts=${Date.now()}`, {
+    cache: 'no-cache',
+    headers: {
+        'Cache-Control': 'no-cache'
+    }
+}).then(response => response.json()).then(config => {
     let priceElement = document.querySelector('.price');
     priceElement.textContent = `${config.price} Ft`;
 }); 
