@@ -26,6 +26,16 @@ const makeConfetti = () => {
     }, 250);
 };
 
+const setupNotification = () => {
+    Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+            const notification = new Notification('🎉 Meglepetés! 🎉', {
+                body: `Amely bárhol felhasználható, amíg a keret engedi. S nem kötelező egy összegben felhasználni 😉`
+            });
+        };
+    });
+}
+
 const resetContent = () => {
     description = null;
     addition = null;
@@ -39,6 +49,9 @@ const updateCardWrappers = () => {
         } else {
             wrapperElement.classList.remove('surprise');
             wrapperElement.classList.add('gift');
+            setTimeout(() => {
+                setupNotification();
+            }, 10000)
             makeConfetti();
         }
     })
