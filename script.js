@@ -36,7 +36,7 @@ const getTextRead = () => {
 const setup = () => {
     if (getTextRead() !== '1') {
         localStorage.setItem('textRead', 0);
-        description = `Ma hivatalosan is közelebb kerültél ahhoz, hogy a torta gyertyáit már ne csak elfújd, hanem kiszámold, mennyi oxigént égetsz el vele. 😄
+        description = `Már hivatalosan is közelebb kerültél ahhoz, hogy a torta gyertyáit már ne csak elfújd, hanem kiszámold, mennyi oxigént égetsz el vele. 😄
                 Remélem, hogy az év minden napján annyi nevetésed lesz, hogy az izmaid is edzésben maradjanak – végre van értelme a konditeremnek!`;
         addition = `Ne feledd: az élet túl rövid ahhoz, hogy komoly legyél… szóval egyél sokat, nevess még többet, és ha lehet, ne vedd túl komolyan a korodat – a számok csak a statisztikának kellenek, a bulinak nem.
                 Legyen ez az év tele meglepetésekkel, amiket utólag is jó poénként mesélhetsz, és emlékezz: az igazi szülinapi ajándék az, ha mások nevetnek a történeteiden – szóval gyakorolj bőven! 🥳`;
