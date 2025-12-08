@@ -4,11 +4,11 @@ on:
   schedule:
     - cron: "0 * * * *"   # every hour
   workflow_dispatch:      # allow manual trigger
-  inputs:
-      price:
-        description: "Insert new price value"
-        required: true
-        default: "10000"
+    inputs:
+        price:
+          description: "Insert new price value"
+          required: true
+          default: "10000"
 
 jobs:
   update:
