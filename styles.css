@@ -5,6 +5,7 @@ html,body {
 
 body {
     background: url('assets/images/background.jpg') no-repeat center center fixed;
+    background-attachment: scroll;
     background-size: cover;
     padding: 5%;
 }
