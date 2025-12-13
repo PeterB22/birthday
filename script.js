@@ -68,7 +68,7 @@ const getTextRead = () => {
 }
 
 const setup = () => {
-    if (getTextRead() !== '1') {
+    // if (getTextRead() !== '1') {
         localStorage.setItem('textRead', 0);
         description = `<p>Ez a nap olyan, mint egy délutáni Mónika Show 2004-ből:</p>
                 <p>még nincs okostelefon, csak csörgős Nokia.
@@ -98,9 +98,9 @@ csak torta, nevetés és egy közös döntés:
         descriptionElement.innerHTML = description;
         additionElement.innerHTML = addition;
         
-    } else {
+    /* } else {
         resetContent();
-    }
+    } */
 }
 
 setup();
