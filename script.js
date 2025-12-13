@@ -27,7 +27,9 @@ const makeConfetti = () => {
 };
 
 const setupNotification = () => {
-    window.alert(`Amely bárhol felhasználható, amíg a keret engedi. S nem kötelező egy összegben felhasználni 😉`);
+    window.alert(`Amely bárhol felhasználható, amíg a keret engedi. S nem kötelező egy összegben felhasználni ^^  
+
+Ui: Itt mindig viszont láthatod a kupont, ha esetleg megfeledkeznél róla :)`);
 }
 
 const resetContent = () => {
@@ -55,6 +57,7 @@ const onNext = () => {
     if (getTextRead() === '0') {
         localStorage.setItem('textRead', 1);
         resetContent();
+        updateCardWrappers();
     } else {
         updateCardWrappers();
     }
@@ -67,15 +70,33 @@ const getTextRead = () => {
 const setup = () => {
     if (getTextRead() !== '1') {
         localStorage.setItem('textRead', 0);
-        description = `Már hivatalosan is közelebb kerültél ahhoz, hogy a torta gyertyáit már ne csak elfújd, hanem kiszámold, mennyi oxigént égetsz el vele. 😄
-                Remélem, hogy az év minden napján annyi nevetésed lesz, hogy az izmaid is edzésben maradjanak – végre van értelme a konditeremnek!`;
-        addition = `Ne feledd: az élet túl rövid ahhoz, hogy komoly legyél… szóval egyél sokat, nevess még többet, és ha lehet, ne vedd túl komolyan a korodat – a számok csak a statisztikának kellenek, a bulinak nem.
-                Legyen ez az év tele meglepetésekkel, amiket utólag is jó poénként mesélhetsz, és emlékezz: az igazi szülinapi ajándék az, ha mások nevetnek a történeteiden – szóval gyakorolj bőven! 🥳`;
+        description = `<p>Ez a nap olyan, mint egy délutáni Mónika Show 2004-ből:</p>
+                <p>még nincs okostelefon, csak csörgős Nokia.
+                Az MSN fel-le jelentkezik,
+                és mindenki tudja,hogy "most ő beszél.”</p>
+                <p>Kívánom, hogy az új évedben: </p>
+                <ul>
+                <li>a problémák olyan gyorsan oldódjanak meg,
+                mint amikor Mónika azt mondja: „jó, akkor menjünk tovább.”, vagy "ülj egy székkel arrébb!"</li>
+                
+                <li>a rosszindulat lepattanjon rólad,
+                mint egy startlapos pop-up hirdetés</li>
+
+                <li>és a jó dolgok maradjanak meg,
+                mint a péntek délutáni TV2-s blokk a suliból hazafelé</li>
+                </ul>`;
+        addition = `<p>Maradj ilyen vidám, önazonos, kedves és szerethető,
+mert „látszik, hogy egyértelműen jó ember vagy.” ❤️</p>
+<p>Ha bármi vita lenne az életben, csak mosolyogj,
+és mondd: „szeretném, ha kulturált körülmények között beszélnénk.”</p>
+                <p>Ma nincs dráma, nincs reklamáció,
+csak torta, nevetés és egy közös döntés:
+„EZ ÍGY VAN JÓL.” 🎉🥂 </p>`;
 
         descriptionElement = document.querySelector('.description');
         additionElement = document.querySelector('.addition');
-        descriptionElement.textContent = description;
-        additionElement.textContent = addition;
+        descriptionElement.innerHTML = description;
+        additionElement.innerHTML = addition;
         
     } else {
         resetContent();
